@@ -9,8 +9,9 @@ namespace Renty.Models
     {
 
         public int Id { get; set; }
-        public string nome { get; set; }
-        public String Type { get; set; }
+        public string Nome { get; set; }
+        public string Type { get; set; }
+
 
     }
 }
