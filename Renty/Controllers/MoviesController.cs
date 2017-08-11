@@ -17,8 +17,9 @@ namespace Renty.Controllers
 
                 //return View(movie);
                 //return Content("Hello World!");
-
-            return HttpNotFound();
+                //return HttpNotFound();
+                //return new EmptyResult();
+                //return RedirectToAction("Index", "Home", new { page = 1, SortBy  ="name" } );
 
         }
     }
