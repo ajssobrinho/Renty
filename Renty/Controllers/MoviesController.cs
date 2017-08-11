@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Renty.Models;
+using Renty.ViewModels;
 
 namespace Renty.Controllers
 {
@@ -15,19 +16,28 @@ namespace Renty.Controllers
 
             var movie = new Movie(){ Nome = "Shrek" };
 
-                return View(movie);
+            var clientes = new List<Cliente>
+            {
+                new Cliente {Nome = "Cliente número 1"},
+                new Cliente {Nome = "Cliente número 2"}
+            };
 
-                //return Content("Hello World!");
-                //return HttpNotFound();
-                //return new EmptyResult();
-                //return RedirectToAction("Index", "Home", new { page = 1, SortBy  ="name" } );
+            var ViewModel = new RandomMovieViewModel()
+            {
+                Movie = movie,
+                Clientes = clientes
+            };
+
+            return View(ViewModel);
+
+            //return Content("Hello World!");
+            //return HttpNotFound();
+            //return new EmptyResult();
+            //return RedirectToAction("Index", "Home", new { page = 1, SortBy  ="name" } );
 
         }
 
-        public ActionResult Edit(int movieId)
-        {
-            return Content("movieId = " + movieId );
-        }
+        
 
     }
 }

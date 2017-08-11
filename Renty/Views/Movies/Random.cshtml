@@ -1,8 +1,36 @@
-﻿@model Renty.Models.Movie
+﻿@model Renty.ViewModels.RandomMovieViewModel
+
 @{
     ViewBag.Title = "Random";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Nome</h2>
+@{
+    var className = Model.Clientes.Count > 5 ? "popular" : null;
+}
+
+
+<h2 class="popular">@Model.Movie.Nome</h2>
+
+@if (Model.Clientes.Count == 0)
+{
+    <p>No one has rented this movie before.</p>
+
+}
+else
+
+{
+    
+}
+<ul>
+@foreach (var Cliente in Model.Clientes)
+{
+
+    <li>@Cliente.Nome</li>
+
+
+
+}
+    
+</ul>
 
