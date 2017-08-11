@@ -15,12 +15,19 @@ namespace Renty.Controllers
 
             var movie = new Movie(){ Nome = "Shrek" };
 
-                //return View(movie);
+                return View(movie);
+
                 //return Content("Hello World!");
                 //return HttpNotFound();
                 //return new EmptyResult();
                 //return RedirectToAction("Index", "Home", new { page = 1, SortBy  ="name" } );
 
         }
+
+        public ActionResult Edit(int movieId)
+        {
+            return Content("movieId = " + movieId );
+        }
+
     }
 }
